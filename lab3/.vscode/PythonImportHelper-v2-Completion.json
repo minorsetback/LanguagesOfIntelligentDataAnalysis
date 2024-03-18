@@ -1,0 +1,218 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df = pd.read_csv('mlbootcamp_train_Soroka.csv')\nfor c in df.columns:\n    n = df[c].nunique()\n    print(c)\n    if n <= 3:\n        print(n, sorted(df[c].value_counts().to_dict().items()))\n    else:\n        print(n)\n    print(10 * '-')\ncorrelation_matrix = df.corr()",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_matrix",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "correlation_matrix = df.corr()\nplt.figure(figsize=(12, 9))\nsns.heatmap(correlation_matrix, annot=True, fmt=\".2f\", cmap=\"crest\")\nplt.title(\"Correlation Matrix (Pearson)\")\nplt.show()\n# Знаходження двох ознак з найбільшою кореляцією (за Пірсоном)\nmax_corr = correlation_matrix.unstack().sort_values(ascending=False)\nprint(\"Найбільш корелюючі ознаки:\")\nprint(max_corr[(max_corr < 1)][:2])\ndf_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active', 'cardio'])",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "max_corr",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "max_corr = correlation_matrix.unstack().sort_values(ascending=False)\nprint(\"Найбільш корелюючі ознаки:\")\nprint(max_corr[(max_corr < 1)][:2])\ndf_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active', 'cardio'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()) \\\n    .sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}) \\\n    .reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)\nplt.title('Count of Each Categorical Variable')",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active', 'cardio'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()) \\\n    .sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}) \\\n    .reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)\nplt.title('Count of Each Categorical Variable')\nplt.show()\n# Розділення елементів вибірки за значеннями цільової змінної\ndf_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active'], id_vars=['cardio'])",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()) \\\n    .sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}) \\\n    .reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)\nplt.title('Count of Each Categorical Variable')\nplt.show()\n# Розділення елементів вибірки за значеннями цільової змінної\ndf_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active'], id_vars=['cardio'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value', 'cardio'])['value'].count()) \\",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df_uniques = pd.melt(frame=df, value_vars=['gender', 'cholesterol', 'gluc', 'smoke', 'alco', 'active'], id_vars=['cardio'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value', 'cardio'])['value'].count()) \\\n    .sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}) \\\n    .reset_index()\nsns.catplot(x='variable', y='count', hue='value', col='cardio', data=df_uniques, kind='bar', aspect=1.5)\nplt.suptitle('Count of Each Categorical Variable by Cardio')\nplt.show()\n# Перетворення DataFrame в \"Long Format\"\nlongformat = pd.melt(frame=df, value_vars='height', id_vars='gender')",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value', 'cardio'])['value'].count()) \\\n    .sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}) \\\n    .reset_index()\nsns.catplot(x='variable', y='count', hue='value', col='cardio', data=df_uniques, kind='bar', aspect=1.5)\nplt.suptitle('Count of Each Categorical Variable by Cardio')\nplt.show()\n# Перетворення DataFrame в \"Long Format\"\nlongformat = pd.melt(frame=df, value_vars='height', id_vars='gender')\n# Побудова violinplot",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "longformat",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "longformat = pd.melt(frame=df, value_vars='height', id_vars='gender')\n# Побудова violinplot\nplt.figure(figsize=(12, 8))\nsns.violinplot(data=longformat, x='variable', y='value', hue='gender', scale='count')\nplt.title('Distribution of Height by Gender')\nplt.xlabel('Height')\nplt.ylabel('Value')\nplt.show()\n# Побудова kdeplot для розподілу росту для чоловіків та жінок\nplt.figure(figsize=(12, 8))",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "spearman_corr",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "spearman_corr = df.corr(method='spearman')\nplt.figure(figsize=(12, 9))\nsns.heatmap(spearman_corr, annot=True, fmt=\".2f\", cmap=\"crest\")\nplt.title(\"Spearman Correlation Matrix\")\nplt.show()\n# Знаходження ознак з найбільшою ранговою кореляцією (Спірмен)\nmax_spearman_corr = spearman_corr.unstack().sort_values(ascending=False)\nprint(\"Найбільш корелюючі ознаки за Спірменом:\")\nprint(max_spearman_corr[(max_spearman_corr < 1)][:2])\ndf['age_years'] = (df['age'] // 365.25).astype(int)",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "max_spearman_corr",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "max_spearman_corr = spearman_corr.unstack().sort_values(ascending=False)\nprint(\"Найбільш корелюючі ознаки за Спірменом:\")\nprint(max_spearman_corr[(max_spearman_corr < 1)][:2])\ndf['age_years'] = (df['age'] // 365.25).astype(int)\nplt.figure(figsize=(12, 8))\nsns.countplot(x='age_years', hue='cardio', data=df)\nplt.title('Count of People by Age (Years) and Cardio Status')\nplt.xlabel('Age (Years)')\nplt.ylabel('Count')\nplt.xticks(rotation=90)",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df['age_years']",
+        "kind": 5,
+        "importPath": "lab3",
+        "description": "lab3",
+        "peekOfCode": "df['age_years'] = (df['age'] // 365.25).astype(int)\nplt.figure(figsize=(12, 8))\nsns.countplot(x='age_years', hue='cardio', data=df)\nplt.title('Count of People by Age (Years) and Cardio Status')\nplt.xlabel('Age (Years)')\nplt.ylabel('Count')\nplt.xticks(rotation=90)\nplt.show()",
+        "detail": "lab3",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "df = pd.read_csv('Data.csv')\n# Подивимося на значення, які приймають ознаки\nfor c in df.columns:\n    n = df[c].nunique()\n    print(c)\n    if n <= 3:\n        print(n, sorted(df[c].value_counts().to_dict().items()))\n    else:\n        print(n)\n    print(10 * '-')",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "numeric_features",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "numeric_features = df.select_dtypes(include=[np.number]).columns\nprint(\"\\nКількісні ознаки (без id):\", len(numeric_features) - 1)  # віднімаємо id\n# Скільки категоріальних ознак?\ncategorical_features = df.select_dtypes(include=[np.object]).columns\nprint(\"Категоріальні ознаки:\", len(categorical_features))\n# Кореляційна матриця\ncorrelation_matrix = df.corr()\nplt.figure(figsize=(12, 9))\nsns.heatmap(correlation_matrix, cmap=\"crest\", annot=True, fmt=\".2f\")\nplt.title(\"Кореляційна матриця\")",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "categorical_features",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "categorical_features = df.select_dtypes(include=[np.object]).columns\nprint(\"Категоріальні ознаки:\", len(categorical_features))\n# Кореляційна матриця\ncorrelation_matrix = df.corr()\nplt.figure(figsize=(12, 9))\nsns.heatmap(correlation_matrix, cmap=\"crest\", annot=True, fmt=\".2f\")\nplt.title(\"Кореляційна матриця\")\nplt.show()\n# Візуалізація категоріальних ознак\ndf_uniques = pd.melt(frame=df, value_vars=['speed', 'rr', 'lin', 'distance', 'timeper', 'cat', 'grpsize', 'calf', 'behav', 'count'])",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_matrix",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "correlation_matrix = df.corr()\nplt.figure(figsize=(12, 9))\nsns.heatmap(correlation_matrix, cmap=\"crest\", annot=True, fmt=\".2f\")\nplt.title(\"Кореляційна матриця\")\nplt.show()\n# Візуалізація категоріальних ознак\ndf_uniques = pd.melt(frame=df, value_vars=['speed', 'rr', 'lin', 'distance', 'timeper', 'cat', 'grpsize', 'calf', 'behav', 'count'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()).sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}).reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "df_uniques = pd.melt(frame=df, value_vars=['speed', 'rr', 'lin', 'distance', 'timeper', 'cat', 'grpsize', 'calf', 'behav', 'count'])\ndf_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()).sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}).reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)\nplt.title(\"Категоріальні ознаки\")\nplt.show()\n# Розподіл росту за speed\nlongformat = pd.melt(frame=df, value_vars='speed', id_vars='id')\nplt.figure(figsize=(10, 6))\nsns.violinplot(data=longformat, x='variable', y='value')",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "df_uniques",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "df_uniques = pd.DataFrame(df_uniques.groupby(['variable', 'value'])['value'].count()).sort_index(level=[0, 1]) \\\n    .rename(columns={'value': 'count'}).reset_index()\nsns.catplot(x='variable', y='count', hue='value', data=df_uniques, kind='bar', aspect=3)\nplt.title(\"Категоріальні ознаки\")\nplt.show()\n# Розподіл росту за speed\nlongformat = pd.melt(frame=df, value_vars='speed', id_vars='id')\nplt.figure(figsize=(10, 6))\nsns.violinplot(data=longformat, x='variable', y='value')\nplt.title(\"Розподіл росту\")",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "longformat",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "longformat = pd.melt(frame=df, value_vars='speed', id_vars='id')\nplt.figure(figsize=(10, 6))\nsns.violinplot(data=longformat, x='variable', y='value')\nplt.title(\"Розподіл росту\")\nplt.show()\n# Рангова кореляція\nspearman_corr = df.corr(method='spearman')\nplt.figure(figsize=(12, 9))\nsns.heatmap(spearman_corr, cmap=\"crest\", annot=True, fmt=\".2f\")\nplt.title(\"Рангова кореляція Спірмена\")",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    },
+    {
+        "label": "spearman_corr",
+        "kind": 5,
+        "importPath": "lab3_10variant",
+        "description": "lab3_10variant",
+        "peekOfCode": "spearman_corr = df.corr(method='spearman')\nplt.figure(figsize=(12, 9))\nsns.heatmap(spearman_corr, cmap=\"crest\", annot=True, fmt=\".2f\")\nplt.title(\"Рангова кореляція Спірмена\")\nplt.show()",
+        "detail": "lab3_10variant",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 5,
+        "importPath": "lab1_3",
+        "description": "lab1_3",
+        "peekOfCode": "test = [\n        ['Прізвище1', 'Ім’я1', '01', 'січня', '2000', 'чоловіча', 'Група1', 'бюджет', '2', [[90, 85, 78, 92, 90, 85, 78, 92, 70], [95, 88, 79, 91, 90, 85, 78, 92, 70], [91, 86, 80, 93, 90, 85, 78, 92, 70], [93, 89, 82, 94, 90, 85, 78, 92, 70], [100, 100, 100, 100, 90, 85, 78, 92, 70], [95, 92, 87, 95, 90, 85, 78, 92, 70]]],\n        ['Прізвище2', 'Ім’я2', '02', 'лютого', '2001', 'жіноча', 'Група2', 'контракт', '3', [[85, 80, 75, 88, 90, 85, 78, 92, 70], [90, 85, 78, 92, 90, 85, 78, 92, 70], [92, 87, 80, 94, 90, 85, 78, 92, 70], [87, 82, 79, 91, 90, 85, 78, 92, 70], [98, 95, 89, 96, 90, 85, 78, 92, 70], [94, 90, 85, 92, 90, 85, 78, 92, 70]]],\n        ['Прізвище3', 'Ім’я3', '03', 'березня', '2002', 'чоловіча', 'Група1', 'бюджет', '1', [[92, 88, 84, 95, 90, 85, 78, 92, 70], [87, 83, 80, 91, 90, 85, 78, 92, 70], [90, 86, 82, 94, 90, 85, 78, 92, 70], [89, 85, 78, 93, 90, 85, 78, 92, 70], [97, 92, 88, 96, 90, 85, 78, 92, 70], [96, 94, 90, 98, 90, 85, 78, 92, 70]]],\n        ['Прізвище4', 'Ім’я4', '04', 'квітня', '2003', 'жіноча', 'Група2', 'контракт', '2', [[88, 84, 79, 91, 90, 85, 78, 92, 70], [85, 82, 78, 90, 90, 85, 78, 92, 70], [89, 85, 80, 92, 90, 85, 78, 92, 70], [90, 86, 81, 93, 90, 85, 78, 92, 70], [96, 94, 89, 97, 90, 85, 78, 92, 70], [93, 90, 86, 95, 90, 85, 78, 92, 70]]],\n        ['Прізвище5', 'Ім’я5', '05', 'травня', '2004', 'чоловіча', 'Група3', 'бюджет', '3', [[90, 87, 82, 94, 90, 85, 78, 92, 70], [86, 83, 79, 92, 90, 85, 78, 92, 70], [92, 88, 83, 95, 90, 85, 78, 92, 70], [93, 89, 85, 96, 90, 85, 78, 92, 70], [98, 95, 90, 98, 90, 85, 78, 92, 70], [95, 92, 88, 97, 90, 85, 78, 92, 70]]],\n        ['Прізвище6', 'Ім’я6', '06', 'червня', '2005', 'жіноча', 'Група3', 'контракт', '1', [[85, 82, 78, 91, 90, 85, 78, 92, 70], [89, 85, 80, 93, 90, 85, 78, 92, 70], [88, 84, 79, 92, 90, 85, 78, 92, 70], [92, 88, 84, 96, 90, 85, 78, 92, 70], [97, 93, 88, 98, 90, 85, 78, 92, 70], [94, 91, 87, 96, 90, 85, 78, 92, 70]]],\n        ['Прізвище7', 'Ім’я7', '07', 'липня', '2006', 'чоловіча', 'Група1', 'бюджет', '2', [[91, 87, 83, 95, 90, 85, 78, 92, 70], [88, 84, 79, 92, 90, 85, 78, 92, 70], [86, 83, 80, 91, 90, 85, 78, 92, 70], [90, 86, 82, 94, 90, 85, 78, 92, 70], [95, 92, 87, 96, 90, 85, 78, 92, 70], [93, 89, 85, 95, 90, 85, 78, 92, 70]]],\n        ['Прізвище8', 'Ім’я8', '08', 'серпня', '2007', 'жіноча', 'Група2', 'контракт', '3', [[86, 82, 78, 91, 90, 85, 78, 92, 70], [89, 85, 80, 93, 90, 85, 78, 92, 70], [92, 88, 83, 96, 90, 85, 78, 92, 70], [90, 86, 81, 94, 90, 85, 78, 92, 70], [96, 93, 89, 97, 90, 85, 78, 92, 70], [94, 91, 88, 96, 90, 85, 78, 92, 70]]],\n        ['Прізвище9', 'Ім’я9', '09', 'вересня', '2008', 'чоловіча', 'Група3', 'бюджет', '1', [[90, 86, 82, 94, 90, 85, 78, 92, 70], [87, 83, 80, 91, 90, 85, 78, 92, 70], [91, 88, 84, 95, 90, 85, 78, 92, 70], [89, 85, 80, 93, 90, 85, 78, 92, 70], [98, 94, 89, 97, 90, 85, 78, 92, 70], [95, 91, 87, 96, 90, 85, 78, 92, 70]]],",
+        "detail": "lab1_3",
+        "documentation": {}
+    },
+    {
+        "label": "extract_average",
+        "kind": 2,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "def extract_average(row):\n    values = eval(row) \n    averages = [np.mean(sublist) for sublist in values]  \n    return np.mean(averages)  \nlast_column_name = df.columns[-1]\ndf[last_column_name] = df[last_column_name].apply(extract_average)\nlast_column_stats = df[last_column_name].describe()\nmode = df[last_column_name].mode().iloc[0]\nmedian = df[last_column_name].median()\nmax_value = df[last_column_name].max()",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "df = pd.read_csv('test.csv')\nprint(\"Перші 5 записів:\")\nprint(df.head())\nprint(\"\\nОстанні 5 записів:\")\nprint(df.tail())\ndef extract_average(row):\n    values = eval(row) \n    averages = [np.mean(sublist) for sublist in values]  \n    return np.mean(averages)  \nlast_column_name = df.columns[-1]",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "last_column_name",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "last_column_name = df.columns[-1]\ndf[last_column_name] = df[last_column_name].apply(extract_average)\nlast_column_stats = df[last_column_name].describe()\nmode = df[last_column_name].mode().iloc[0]\nmedian = df[last_column_name].median()\nmax_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "df[last_column_name]",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "df[last_column_name] = df[last_column_name].apply(extract_average)\nlast_column_stats = df[last_column_name].describe()\nmode = df[last_column_name].mode().iloc[0]\nmedian = df[last_column_name].median()\nmax_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "last_column_stats",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "last_column_stats = df[last_column_name].describe()\nmode = df[last_column_name].mode().iloc[0]\nmedian = df[last_column_name].median()\nmax_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)\nprint(\"\\nМедіана для останнього стовпця:\")",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "mode",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "mode = df[last_column_name].mode().iloc[0]\nmedian = df[last_column_name].median()\nmax_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)\nprint(\"\\nМедіана для останнього стовпця:\")\nprint(median)",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "median",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "median = df[last_column_name].median()\nmax_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)\nprint(\"\\nМедіана для останнього стовпця:\")\nprint(median)\nprint(\"\\nМаксимальне значення для останнього стовпця:\")",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "max_value",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "max_value = df[last_column_name].max()\nmin_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)\nprint(\"\\nМедіана для останнього стовпця:\")\nprint(median)\nprint(\"\\nМаксимальне значення для останнього стовпця:\")\nprint(max_value)",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "min_value",
+        "kind": 5,
+        "importPath": "lab1_4",
+        "description": "lab1_4",
+        "peekOfCode": "min_value = df[last_column_name].min()\nprint(\"\\nСтатистичні характеристики для останнього стовпця:\")\nprint(last_column_stats)\nprint(\"\\nМода для останнього стовпця:\")\nprint(mode)\nprint(\"\\nМедіана для останнього стовпця:\")\nprint(median)\nprint(\"\\nМаксимальне значення для останнього стовпця:\")\nprint(max_value)\nprint(\"\\nМінімальне значення для останнього стовпця:\")",
+        "detail": "lab1_4",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "lab1_5",
+        "description": "lab1_5",
+        "peekOfCode": "df = pd.read_csv('billionaire_list_20yrs.csv')\n# Виведення перших декількох рядків\nprint(\"Перші 5 записів:\")\nprint(df.head())\n# Інформація про датасет (типи даних та кількість відсутніх значень)\nprint(\"\\nІнформація про датасет:\")\nprint(df.info())\n# Розрахунок основних статистичних характеристик для числових даних\nprint(\"\\nОсновні статистичні характеристики:\")\nprint(df.describe())",
+        "detail": "lab1_5",
+        "documentation": {}
+    }
+]

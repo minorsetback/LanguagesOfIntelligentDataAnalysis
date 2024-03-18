@@ -1,0 +1,253 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileReport",
+        "importPath": "pandas_profiling",
+        "description": "pandas_profiling",
+        "isExtraImport": true,
+        "detail": "pandas_profiling",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "df = pd.read_csv('mlbootcamp_train_Soroka.csv', sep=';', index_col='id')\n# Виведення перших 10 записів\nprint(df.head(10))\nprint(df.describe())\n# Виконання профілювання датасету\nprofile = ProfileReport(df)\nprofile.to_file(output_file=\"AAA_data_profiling.html\")\n#Питання 1: Скільки чоловіків і жінок представлено в наборі даних?\ngender_counts = df['gender'].value_counts()\nprint(gender_counts)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "profile = ProfileReport(df)\nprofile.to_file(output_file=\"AAA_data_profiling.html\")\n#Питання 1: Скільки чоловіків і жінок представлено в наборі даних?\ngender_counts = df['gender'].value_counts()\nprint(gender_counts)\n#Питання 2: Хто в середньому рідше вказує, що вживає алкоголь - чоловіки чи жінки?\naverage_alcohol = df.groupby('gender')['alco'].mean()\nprint(average_alcohol)\n#Питання 3: У скільки разів відсоток курців серед чоловіків більше, ніж відсоток курців серед жінок?\nmale_smokers = df[df['gender'] == 2]['smoke'].mean()",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "gender_counts",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "gender_counts = df['gender'].value_counts()\nprint(gender_counts)\n#Питання 2: Хто в середньому рідше вказує, що вживає алкоголь - чоловіки чи жінки?\naverage_alcohol = df.groupby('gender')['alco'].mean()\nprint(average_alcohol)\n#Питання 3: У скільки разів відсоток курців серед чоловіків більше, ніж відсоток курців серед жінок?\nmale_smokers = df[df['gender'] == 2]['smoke'].mean()\nfemale_smokers = df[df['gender'] == 1]['smoke'].mean()\nratio = male_smokers / female_smokers\nprint(round(ratio, 2))",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "average_alcohol",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "average_alcohol = df.groupby('gender')['alco'].mean()\nprint(average_alcohol)\n#Питання 3: У скільки разів відсоток курців серед чоловіків більше, ніж відсоток курців серед жінок?\nmale_smokers = df[df['gender'] == 2]['smoke'].mean()\nfemale_smokers = df[df['gender'] == 1]['smoke'].mean()\nratio = male_smokers / female_smokers\nprint(round(ratio, 2))\n#Питання 4: У кого в середньому тиск вище, у жінок чи чоловіків?\naverage_pressure = df.groupby('gender')[['ap_hi', 'ap_lo']].mean()\nprint(average_pressure)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "male_smokers",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "male_smokers = df[df['gender'] == 2]['smoke'].mean()\nfemale_smokers = df[df['gender'] == 1]['smoke'].mean()\nratio = male_smokers / female_smokers\nprint(round(ratio, 2))\n#Питання 4: У кого в середньому тиск вище, у жінок чи чоловіків?\naverage_pressure = df.groupby('gender')[['ap_hi', 'ap_lo']].mean()\nprint(average_pressure)\n#Питання 5: На скільки місяців відрізняється медіанне значення віку курців і тих, хто не курить?\nmedian_age_smokers = df[df['smoke'] == 1]['age'].median()\nmedian_age_non_smokers = df[df['smoke'] == 0]['age'].median()",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "female_smokers",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "female_smokers = df[df['gender'] == 1]['smoke'].mean()\nratio = male_smokers / female_smokers\nprint(round(ratio, 2))\n#Питання 4: У кого в середньому тиск вище, у жінок чи чоловіків?\naverage_pressure = df.groupby('gender')[['ap_hi', 'ap_lo']].mean()\nprint(average_pressure)\n#Питання 5: На скільки місяців відрізняється медіанне значення віку курців і тих, хто не курить?\nmedian_age_smokers = df[df['smoke'] == 1]['age'].median()\nmedian_age_non_smokers = df[df['smoke'] == 0]['age'].median()\nmonths_difference = (median_age_smokers - median_age_non_smokers) * 12",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "ratio",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "ratio = male_smokers / female_smokers\nprint(round(ratio, 2))\n#Питання 4: У кого в середньому тиск вище, у жінок чи чоловіків?\naverage_pressure = df.groupby('gender')[['ap_hi', 'ap_lo']].mean()\nprint(average_pressure)\n#Питання 5: На скільки місяців відрізняється медіанне значення віку курців і тих, хто не курить?\nmedian_age_smokers = df[df['smoke'] == 1]['age'].median()\nmedian_age_non_smokers = df[df['smoke'] == 0]['age'].median()\nmonths_difference = (median_age_smokers - median_age_non_smokers) * 12\nprint(months_difference)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "average_pressure",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "average_pressure = df.groupby('gender')[['ap_hi', 'ap_lo']].mean()\nprint(average_pressure)\n#Питання 5: На скільки місяців відрізняється медіанне значення віку курців і тих, хто не курить?\nmedian_age_smokers = df[df['smoke'] == 1]['age'].median()\nmedian_age_non_smokers = df[df['smoke'] == 0]['age'].median()\nmonths_difference = (median_age_smokers - median_age_non_smokers) * 12\nprint(months_difference)\n#Питання 6: У скільки разів відрізняються частки хворих людей в двох підгрупах чоловіків?\ndf['age_years'] = round(df['age'] / 365)\ngroup1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "median_age_smokers",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "median_age_smokers = df[df['smoke'] == 1]['age'].median()\nmedian_age_non_smokers = df[df['smoke'] == 0]['age'].median()\nmonths_difference = (median_age_smokers - median_age_non_smokers) * 12\nprint(months_difference)\n#Питання 6: У скільки разів відрізняються частки хворих людей в двох підгрупах чоловіків?\ndf['age_years'] = round(df['age'] / 365)\ngroup1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] < 120) & (df['cholesterol'] == 1)]\ngroup2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "median_age_non_smokers",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "median_age_non_smokers = df[df['smoke'] == 0]['age'].median()\nmonths_difference = (median_age_smokers - median_age_non_smokers) * 12\nprint(months_difference)\n#Питання 6: У скільки разів відрізняються частки хворих людей в двох підгрупах чоловіків?\ndf['age_years'] = round(df['age'] / 365)\ngroup1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] < 120) & (df['cholesterol'] == 1)]\ngroup2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]\nratio_sick_group1 = group1['cardio'].mean()",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "months_difference",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "months_difference = (median_age_smokers - median_age_non_smokers) * 12\nprint(months_difference)\n#Питання 6: У скільки разів відрізняються частки хворих людей в двох підгрупах чоловіків?\ndf['age_years'] = round(df['age'] / 365)\ngroup1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] < 120) & (df['cholesterol'] == 1)]\ngroup2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]\nratio_sick_group1 = group1['cardio'].mean()\nratio_sick_group2 = group2['cardio'].mean()",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "df['age_years']",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "df['age_years'] = round(df['age'] / 365)\ngroup1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] < 120) & (df['cholesterol'] == 1)]\ngroup2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]\nratio_sick_group1 = group1['cardio'].mean()\nratio_sick_group2 = group2['cardio'].mean()\nratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "group1",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "group1 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] < 120) & (df['cholesterol'] == 1)]\ngroup2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]\nratio_sick_group1 = group1['cardio'].mean()\nratio_sick_group2 = group2['cardio'].mean()\nratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "group2",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "group2 = df[(df['gender'] == 2) & (df['age_years'] >= 60) & (df['age_years'] <= 64)\n            & (df['ap_hi'] >= 160) & (df['ap_hi'] < 180) & (df['cholesterol'] == 3)]\nratio_sick_group1 = group1['cardio'].mean()\nratio_sick_group2 = group2['cardio'].mean()\nratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2\nmedian_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "ratio_sick_group1",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "ratio_sick_group1 = group1['cardio'].mean()\nratio_sick_group2 = group2['cardio'].mean()\nratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2\nmedian_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "ratio_sick_group2",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "ratio_sick_group2 = group2['cardio'].mean()\nratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2\nmedian_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "ratio_difference",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "ratio_difference = ratio_sick_group2 / ratio_sick_group1\nprint(round(ratio_difference, 2))\n#Питання 7: Побудова нової ознаки - BMI та вибір вірних тверджень\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2\nmedian_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)\nprint(\"Median BMI for Sick individuals:\", median_bmi_sick)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "df['bmi']",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "df['bmi'] = df['weight'] / (df['height'] / 100) ** 2\nmedian_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)\nprint(\"Median BMI for Sick individuals:\", median_bmi_sick)\n#Питання 8: Відфільтрування неточних даних і підрахунок відсотків видалених даних\nfiltered_data = df[\n    (df['ap_lo'] <= df['ap_hi']) &",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "median_bmi",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "median_bmi = df['bmi'].median()\nmedian_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)\nprint(\"Median BMI for Sick individuals:\", median_bmi_sick)\n#Питання 8: Відфільтрування неточних даних і підрахунок відсотків видалених даних\nfiltered_data = df[\n    (df['ap_lo'] <= df['ap_hi']) &\n    (df['height'] >= df['height'].quantile(0.025)) &",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "median_bmi_healthy",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "median_bmi_healthy = df[df['cardio'] == 0]['bmi'].median()\nmedian_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)\nprint(\"Median BMI for Sick individuals:\", median_bmi_sick)\n#Питання 8: Відфільтрування неточних даних і підрахунок відсотків видалених даних\nfiltered_data = df[\n    (df['ap_lo'] <= df['ap_hi']) &\n    (df['height'] >= df['height'].quantile(0.025)) &\n    (df['height'] <= df['height'].quantile(0.975)) &",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "median_bmi_sick",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "median_bmi_sick = df[df['cardio'] == 1]['bmi'].median()\nprint(\"Median BMI:\", median_bmi)\nprint(\"Median BMI for Healthy individuals:\", median_bmi_healthy)\nprint(\"Median BMI for Sick individuals:\", median_bmi_sick)\n#Питання 8: Відфільтрування неточних даних і підрахунок відсотків видалених даних\nfiltered_data = df[\n    (df['ap_lo'] <= df['ap_hi']) &\n    (df['height'] >= df['height'].quantile(0.025)) &\n    (df['height'] <= df['height'].quantile(0.975)) &\n    (df['weight'] >= df['weight'].quantile(0.025)) &",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "filtered_data",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "filtered_data = df[\n    (df['ap_lo'] <= df['ap_hi']) &\n    (df['height'] >= df['height'].quantile(0.025)) &\n    (df['height'] <= df['height'].quantile(0.975)) &\n    (df['weight'] >= df['weight'].quantile(0.025)) &\n    (df['weight'] <= df['weight'].quantile(0.975))\n]\npercentage_removed = (1 - len(filtered_data) / len(df)) * 100\nprint(round(percentage_removed, 2), \"% of data was removed.\")\n#Питання 9: Підрахунок чоловіків і жінок з зайвою вагою",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "percentage_removed",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "percentage_removed = (1 - len(filtered_data) / len(df)) * 100\nprint(round(percentage_removed, 2), \"% of data was removed.\")\n#Питання 9: Підрахунок чоловіків і жінок з зайвою вагою\n# Розрахунок BMI та визначення категорій\ndf['bmi'] = df['weight'] / (df['height'] / 100) ** 2\noverweight_men = df[(df['gender'] == 2) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\noverweight_women = df[(df['gender'] == 1) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\nprint(\"Overweight Men:\", overweight_men)\nprint(\"Overweight Women:\", overweight_women)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "df['bmi']",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "df['bmi'] = df['weight'] / (df['height'] / 100) ** 2\noverweight_men = df[(df['gender'] == 2) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\noverweight_women = df[(df['gender'] == 1) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\nprint(\"Overweight Men:\", overweight_men)\nprint(\"Overweight Women:\", overweight_women)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "overweight_men",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "overweight_men = df[(df['gender'] == 2) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\noverweight_women = df[(df['gender'] == 1) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\nprint(\"Overweight Men:\", overweight_men)\nprint(\"Overweight Women:\", overweight_women)",
+        "detail": "lab2",
+        "documentation": {}
+    },
+    {
+        "label": "overweight_women",
+        "kind": 5,
+        "importPath": "lab2",
+        "description": "lab2",
+        "peekOfCode": "overweight_women = df[(df['gender'] == 1) & (df['bmi'] >= 25) & (df['bmi'] < 30)].shape[0]\nprint(\"Overweight Men:\", overweight_men)\nprint(\"Overweight Women:\", overweight_women)",
+        "detail": "lab2",
+        "documentation": {}
+    }
+]
